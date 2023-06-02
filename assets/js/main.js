@@ -1,3 +1,4 @@
+const form = document.querySelector('.card__header--form');
 const dayInput = document.querySelector('#day-input');
 const monthInput = document.querySelector('#month-input');
 const yearInput = document.querySelector('#year-input');
@@ -5,12 +6,26 @@ const button = document.querySelector('.svg');
 
 const date = new Date();
 const year = date.getFullYear();
+const month = date.getMonth();
+const day = date.getDate();
+console.log(day);
+console.log(month);
+console.log(year);
 
 const validate = button.addEventListener('click', (e) => {
 	e.preventDefault();
-
 	validateFormInputs();
+	calculateAge();
 });
+
+const calculateAge = () => {
+	let years = year - yearInput.value;
+	let months = monthInput.value - (month + 1);
+	let days = dayInput.value - day;
+	years = document.getElementById('years-output').innerHTML = years;
+	months = document.getElementById('months-output').innerHTML = months;
+	days = document.getElementById('days-output').innerHTML = days;
+};
 
 const validateFormInputs = () => {
 	/* day */
@@ -21,7 +36,7 @@ const validateFormInputs = () => {
 		setError(dayInput, 'Invalid day');
 	} else if (months.includes(parseInt(monthInput.value))) {
 		parseInt(dayInput.value) < 1 || parseInt(dayInput.value) > 30
-			? setError(dayInput, 'Invalid day')
+			? setError(dayInput, 'Month has 30 days')
 			: setSuccess(dayInput);
 	} else {
 		setSuccess(dayInput);
@@ -53,7 +68,7 @@ const validateFormInputs = () => {
 	}
 };
 
-function setError(element, errorMessage) {
+const setError = (element, errorMessage) => {
 	const parent = element.parentElement;
 	if (parent.classList.contains('success')) {
 		parent.classList.remove('success');
@@ -61,12 +76,14 @@ function setError(element, errorMessage) {
 	parent.classList.add('error');
 	const span = parent.querySelector('span');
 	span.textContent = errorMessage;
-}
+};
 
-function setSuccess(element) {
+const setSuccess = (element) => {
 	const parent = element.parentElement;
 	if (parent.classList.contains('error')) {
 		parent.classList.remove('error');
 	}
+	const span = parent.querySelector('span');
+	span.style.display = 'none';
 	parent.classList.add('success');
-}
+};
