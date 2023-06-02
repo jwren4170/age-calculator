@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<!-- displays site properly based on user's device -->
+
+	<!-- favicon -->
+	<link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png" />
+
+	<!-- js -->
+	<script src="/assets/js/script.js" defer></script>
+
+	<!-- css -->
+	<link rel="stylesheet" href="/assets/css/style.css" />
+
+	<title>Frontend Mentor | Age calculator app</title>
+</head>
+
+<body>
+	<main class="main">
+		<!-- Day DD Month MM Year YYYY -- years -- months -- days -->
+
+		<div class="card__container">
+			<div class="card__header">
+				<form class="card__header--form">
+					<div class="day card__header--inputs">
+						<label for="day-input" class="card__header--label">Day</label>
+						<input type="text" class="card__header--input" id="day-input" placeholder="" />
+						<span class="card__header--error"></span>
+					</div>
+					<div class="month card__header--inputs">
+						<label for="month-input" class="card__header--label">Month</label>
+						<input type="text" class="card__header--input" id="month-input" placeholder="" />
+						<span class="card__header--error"></span>
+					</div>
+					<div class="year card__header--inputs">
+						<label for="year-input" class="card__header--label">Year</label>
+						<input type="text" class="card__header--input" id="year-input" placeholder="" />
+						<span class="card__header--error"></span>
+					</div>
+				</form>
+				<div class="btn__container">
+					<span class="btn__container--hr">
+						<hr class="hr">
+						<img src="./assets/images/icon-arrow.svg" alt="Submit button for age calculation" role="button"
+							class="svg">
+					</span>
+				</div>
+				<div class="card__body">
+					<div class="card__body--years">
+						<span>38</span>years
+					</div>
+					<div class="card__body--months">
+						<span>3</span>months
+					</div>
+					<div class="card__body--days"><span>26</span>days</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- <footer class="footer">
+			Challenge by
+			<a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. Coded by <a
+				href="#">JWord</a>.
+		</footer> -->
+	</main>
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+@use '../abstracts/colors' as *;
+@use '../abstracts/functions' as *;
+
+@mixin error-styles {
+	.card__header {
+		&--label {
+			color: var(--light-red);
+		}
+		&--input[type='text'] {
+			border: rems(2) solid var(--light-red);
+		}
+		&--error {
+			visibility: visible;
+			color: var(--light-red);
+			font-size: rems(1);
+			white-space: nowrap;
+		}
+	}
+}
+
+@mixin success-styles {
+	.card__header {
+		&--label {
+			color: var(--green);
+		}
+		&--input[type='text'] {
+			border: rems(2) solid var(--green);
+		}
+	}
+}

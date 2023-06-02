@@ -1,0 +1,30 @@
+@use 'functions' as func;
+@use 'sass:map';
+
+// small 700 medium 900 larger 1440
+// mobile
+$breakpoints-up: (
+	'medium': func.ems(700),
+	'large': func.ems(900),
+	'xlarge': func.ems(1440),
+);
+
+// small 699.98 medium 899.98 larger 1439.98
+// desktop and laptops
+$breakpoints-down: (
+	'small': func.ems(699.98),
+	'medium': func.ems(899.98),
+	'large': func.ems(1439.98),
+);
+
+@mixin breakpoint-up($size) {
+	@media (min-width: map-get($breakpoints-up, $size)) {
+		@content;
+	}
+}
+
+@mixin breakpoint-down($size) {
+	@media (max-width: map-get($breakpoints-down, $size)) {
+		@content;
+	}
+}
