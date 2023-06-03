@@ -1,4 +1,3 @@
-const form = document.querySelector('.card__header--form');
 const dayInput = document.querySelector('#day-input');
 const monthInput = document.querySelector('#month-input');
 const yearInput = document.querySelector('#year-input');
@@ -41,7 +40,7 @@ const validateFormInputs = () => {
 	} else if (!Number(yearInput.value)) {
 		setError(yearInput, 'Invalid year');
 	} else if (yearInput.value > year) {
-		setError(yearInput, 'Invalid year');
+		setError(yearInput, 'Future year');
 	} else {
 		setSuccess(yearInput);
 	}
