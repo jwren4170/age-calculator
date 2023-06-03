@@ -5,6 +5,8 @@ const yearInput = document.querySelector('#year-input');
 
 const date = new Date();
 const year = date.getFullYear();
+const month = date.getMonth() + 1;
+console.log(month);
 
 const validateFormInputs = () => {
 	/* day */
@@ -41,7 +43,7 @@ const validateFormInputs = () => {
 	} else if (!Number(yearInput.value)) {
 		setError(yearInput, 'Invalid year');
 	} else if (yearInput.value > year) {
-		setError(yearInput, 'Invalid year');
+		setError(yearInput, 'Future year');
 	} else {
 		setSuccess(yearInput);
 	}
