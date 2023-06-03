@@ -4,6 +4,8 @@ const yearInput = document.querySelector('#year-input');
 
 const date = new Date();
 const year = date.getFullYear();
+const month = date.getMonth() + 1;
+console.log(month);
 
 const validateFormInputs = () => {
 	/* day */
