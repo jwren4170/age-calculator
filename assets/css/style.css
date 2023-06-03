@@ -193,6 +193,9 @@ select {
   font-size: 1.125rem;
   outline: none;
 }
+.card__header--input:focus {
+  border-color: var(--purple);
+}
 .card__header--input[type=text]::placeholder {
   font-size: 0.0625rem;
 }

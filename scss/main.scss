@@ -73,6 +73,10 @@
 		outline: none;
 	}
 
+	&--input:focus {
+		border-color: var(--purple);
+	}
+
 	&--input[type='text']::placeholder {
 		font-size: f.rems(1);
 	}
