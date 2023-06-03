@@ -221,7 +221,7 @@ select {
   position: relative;
   cursor: pointer;
 }
-.btn__container .hr {
+.btn__container hr {
   border: 0.0625rem solid var(--light-grey);
   opacity: 0.7;
 }
