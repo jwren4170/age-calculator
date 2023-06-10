@@ -1,7 +1,7 @@
 import { validateFormInputs } from './validation.js';
 import { calculateAge } from './age-calculations.js';
+import { formReset } from './form-reset.js';
 
-const form = document.querySelector('.card__header--form');
 const button = document.querySelector('.svg');
 
 button.addEventListener('click', (e) => {
@@ -9,4 +9,5 @@ button.addEventListener('click', (e) => {
 	e.preventDefault();
 	validateFormInputs();
 	calculateAge();
+	formReset();
 });

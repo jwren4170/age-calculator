@@ -77,10 +77,6 @@
 		border-color: var(--purple);
 	}
 
-	&--input[type='text']::placeholder {
-		font-size: f.rems(1);
-	}
-
 	@include m.breakpoint-up(medium) {
 		&--form {
 			justify-content: start;
